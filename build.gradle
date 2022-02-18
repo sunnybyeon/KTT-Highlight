@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+
+        versionName "9.4.5"
+        versionCode 101
+        applicationId "com.sunnybyeon.kakao.talk.theme.highlight"
+
+        sourceSets {
+            main.res.srcDirs += 'src/main/theme'
+            main.res.srcDirs += 'src/main/theme-adv'
+        }
+    }
+}
